@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ImageBackground, Text } from 'react-native';
+import { View, ImageBackground, Text, Linking } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
@@ -11,7 +11,7 @@ function GiveClasses() {
   const { goBack } = useNavigation();
 
   function handleNavigateBack() {
-    goBack();
+    Linking.openURL('https://isaacken.github.io/proffy-web');
   }
 
   return (
@@ -28,7 +28,7 @@ function GiveClasses() {
       </ImageBackground>
 
       <RectButton onPress={handleNavigateBack} style={styles.okButton}>
-        <Text style={styles.okButtonText}>Tudo bem</Text>
+        <Text style={styles.okButtonText}>Me leve até lá</Text>
       </RectButton>
     </View>
   )
